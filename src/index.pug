@@ -64,7 +64,40 @@ html(lang="en")
                           +icon(`${social.name}`, 'socials__icon')
               .hero__content
                 .owner
-                  .owner__desc Личный сайт веб-разработчика
-                  .owner__name Михаил Бахирев
+                  .owner__desc 
+                    | Личный сайт
+                    br
+                    | веб-разработчика
+                  .owner__name 
+                    | Михаил 
+                    br
+                    | Бахирев
+
               .hero__bottom-buttons
-                .scroll-down-btn Скролл 
+                .scroll-down-btn Скролл
+          section.about 
+            .about__left
+              .dev
+                .dev__avatar
+                  img(src="#" alt="").dev__avatar-pic
+                .dev__description
+                  table.dev__description-table
+                    - 
+                      var decsription= [
+                        {
+                            tdl: 'Проживаю',
+                            td2: 'Санкт-Петербург'
+                        },{
+                            tdl: 'Возраст',
+                            td2: '30 лет'
+                        },{
+                            tdl: 'Родился',
+                            td2: '24 февраля 1989'
+                        }
+                      ]
+                    each row in decsription
+                        tr.dev__description-row
+                          td.dev__description-cell #{row.tdl}
+                          td.dev__description-cell #{row.td2}
+            .about__right
+              .about
