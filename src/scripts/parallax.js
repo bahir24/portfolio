@@ -1,5 +1,5 @@
 
-const parallax = document.querySelector(".hero");
+const parallax = document.querySelector(".parallax");
 const layers = parallax.children;
 
 function move(wScroll) {
