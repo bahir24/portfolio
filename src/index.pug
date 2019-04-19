@@ -12,6 +12,31 @@ html(lang="en")
       .maincontent
         .start-section
           section.hero
+            .parallax__layer(data-speed="0")
+              img(src="src/images/parallax/sky.png").parallax__pic
+            .parallax__layer(data-speed="0.09")
+              img(src="src/images/parallax/mountain.png").parallax__pic
+            .parallax__layer(data-speed="0")
+              .hero__content
+                  .owner
+                    .owner__desc 
+                      | Личный сайт
+                      br
+                      | веб-разработчика
+                    .owner__name 
+                      | Михаил 
+                      br
+                      | Бахирев
+            .parallax__layer(data-speed="0.6")
+              img(src="src/images/parallax/train.png").parallax__pic
+            .parallax__layer(data-speed="1.2")
+              img(src="src/images/parallax/ground.png").parallax__pic
+            .parallax__layer(data-speed="3.2")
+              img(src="src/images/parallax/gradient_662.png").parallax__pic
+            .parallax__layer(data-speed="3.2")
+              img(src="src/images/parallax/gradient_745.png").parallax__pic
+            .parallax__layer(data-speed="3.2")
+              img(src="src/images/parallax/btwn_sec_bg.png").parallax__pic
             .container.hero__container
               header.header
                 .logo МБ
@@ -62,17 +87,7 @@ html(lang="en")
                       li.socials__item
                         a(href=`${social.link}`).socials__link 
                           +icon(`${social.name}`, 'socials__icon')
-              .hero__content
-                .owner
-                  .owner__desc 
-                    | Личный сайт
-                    br
-                    | веб-разработчика
-                  .owner__name 
-                    | Михаил 
-                    br
-                    | Бахирев
-
+              
               .hero__bottom-buttons
                 .scroll-down-btn Скролл
           section.about
@@ -114,33 +129,31 @@ html(lang="en")
                   .more__loftschool
                     p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Для его создания использовались самые современные инструменты разработки.
         section.target
-          .container
+          .container.target__container
             .target__title
-              h1.section__title
+              h1.section__title Чем я могу быть полезен вам
               .target__description
                 p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             ul.dev-skills
-              li.dev-skills__item
-                .skills-kit
-                  h3.skills-kit__title
-                  ul.skills-kit__list
-                    li.skills-kit__item
-                      .skill
-                        svg.skill__shape
-                          circle().skill__circle--up
-                          circle().skill__circle--down
-                            linear-gradient()
-                        .skill__title html
-              li.dev-skills__item
-                .skills-kit
-                  h3.skills-kit__title
-                  ul.skills-kit__list
-                    li.skills-kit__item
-                      .skill
-                        svg.skill__shape
-                          circle().skill__circle--up
-                          circle().skill__circle--down
-                            linear-gradient()
-                        .skill__title html
-
-                
+              - 
+                var skills = [
+                  ['frontend', ['HTML5', 'CSS3', 'Javascript', 'Jquery и vue.js']],
+                  ['workflow', ['GIT', 'Terminal', 'Gulp','Webpack']],
+                ]
+              each item in skills
+                li.dev-skills__item
+                  .skills-kit
+                    h3.skills-kit__title #{item[0]}
+                    ul.skills-kit__list
+                      each skill in item[1]
+                        li.skills-kit__item
+                          .skill
+                            svg(viewbox="-20 -20 200 200" preserveAspectRatio="none").skill__shape
+                              circle(
+                                r="80" cx="80", cy="80"
+                              ).skill__circle--up
+                              //- circle().skill__circle--down
+                                linear-gradient()
+                            h4.skill__title #{skill}               
+        section.works
+                  
