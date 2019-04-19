@@ -1,0 +1,27 @@
+section.target
+          .container.target__container
+            .target__title
+              h1.section__title Чем я могу быть полезен вам
+              .target__description
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            ul.dev-skills
+              - 
+                var skills = [
+                  ['frontend', ['HTML5', 'CSS3', 'Javascript', 'Jquery и vue.js']],
+                  ['workflow', ['GIT', 'Terminal', 'Gulp','Webpack']],
+                ]
+              each item in skills
+                li.dev-skills__item
+                  .skills-kit
+                    h3.skills-kit__title #{item[0]}
+                    ul.skills-kit__list
+                      each skill in item[1]
+                        li.skills-kit__item
+                          .skill
+                            svg(viewbox="-20 -20 200 200" preserveAspectRatio="none").skill__shape
+                              circle(
+                                r="80" cx="80", cy="80"
+                              ).skill__circle--up
+                              //- circle().skill__circle--down
+                                linear-gradient()
+                            h4.skill__title #{skill}
