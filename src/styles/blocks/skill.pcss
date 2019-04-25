@@ -1,3 +1,11 @@
+@for $i from 1 through 20 {
+  .skill__circle--#{$i*5} {
+    stroke-dashoffset: #{$i*20};
+    stroke-width: 10px;
+    fill: green;
+  }
+}
+
 .skill {
   width: 200px;
   height: 200px;
@@ -5,7 +13,7 @@
   stroke: gray;
   stroke-width: 3px;
   stroke-dasharray: 503;
-  stroke-dashoffset: 85;
+  // stroke-dashoffset: 85;
   text-align: center;
 }
 
