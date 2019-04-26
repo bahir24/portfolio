@@ -14,7 +14,8 @@ module.exports = (env, argv) => {
   const pcss = {
     test: /\.(p|post|)css$/,
     use: [
-      isProductionBuild ? MiniCssExtractPlugin.loader : "vue-style-loader",
+      isProductionBuild ? MiniCssExtractPlugin.loader : "sass-loader",
+      "vue-style-loader",      
       "css-loader",
       "postcss-loader"
     ]
