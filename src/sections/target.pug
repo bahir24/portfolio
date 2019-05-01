@@ -66,6 +66,9 @@ section.target
                                 cx="68"
                                 cy="68"
                                 class=`skill__circle-${skill.percent}`
+                                stroke="url(#linear-gradient)"
                                 ).skill__shape-round
-                                linear-gradient()
+                              lineargradient#linear-gradient
+                                stop(offset="0%" stop-color="#ea7400")
+                                stop(offset="100%" stop-color="#f29400")
                             h4.skill__title #{skill.name}

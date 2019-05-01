@@ -24,14 +24,13 @@ $i: 0;
 
 @for $i from 0 through 100 {
   .skill__circle-#{$i} {
-    @if $i <= 50 {
+    @if $i < 50 {
       stroke-dashoffset: 402 - $i*4;
     }
+
     @else {
       stroke-dashoffset: 400 - $i*4;
     }
-
-    stroke: orange;
     stroke-width: 10px;
   }
 }
