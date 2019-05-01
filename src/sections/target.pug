@@ -11,16 +11,16 @@ section.target
                     [
                       {
                       name: 'HTML5',
-                      percent: '45'
+                      percent: '0'
                       },{
                       name: 'CSS3',
-                      percent: '75'
+                      percent: '17'
                       },{
                       name: 'Javascript',
-                      percent: '25'
+                      percent: '33'
                       },{
                       name: 'Jquery и vue.js',
-                      percent: '10'
+                      percent: '49'
                       }
                     ]
                   ],
@@ -28,16 +28,16 @@ section.target
                     [
                       {  
                       name: 'GIT',
-                      percent: '45'
+                      percent: '65'
                       },{
                       name: 'Terminal',
-                      percent: '95'
+                      percent: '81'
                       },{
                       name: 'Gulp',
-                      percent: '5'
+                      percent: '93'
                       },{
                       name: 'Webpack',
-                      percent: '80'
+                      percent: '100'
                       }
                     ]
                   ]                 
@@ -49,20 +49,23 @@ section.target
                     ul.skills-kit__list
                       each skill in item[1]
                         li.skills-kit__item
-                          .skill
-                            svg(viewbox="-20 -20 200 200" 
-                            preserveAspectRatio="none"
-                            ).skill__shape
+                          .skill                            
+                            svg(
+                              viewbox="-2 -2 140 140"
+                              preserveAspectRatio="none"
+                              width='140px'
+                              height='140px'
+                              ).skill__shape
                               circle(
-                                r="80",
-                                cx="80", 
-                                cy="80"                                
-                              )
+                                r="64"
+                                cx="68"
+                                cy="68"
+                              ).skill__shape-round
                               circle(
-                                r="80",
-                                cx="80", 
-                                cy="80",
-                                class=`.skill__circle-${skill.percent}`
-                              ).skill__circle--down
+                                r="64"
+                                cx="68"
+                                cy="68"
+                                class=`skill__circle-${skill.percent}`
+                                ).skill__shape-round
                                 linear-gradient()
                             h4.skill__title #{skill.name}

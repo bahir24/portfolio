@@ -1,20 +1,16 @@
-@for $i from 1 through 20 {
-  .skill__circle--#{$i*5} {
-    // stroke-dashoffset: #{$i*20};
-    stroke-width: 10px;
-    fill: green;
-  }
-}
-
 .skill {
-  width: 200px;
-  height: 200px;
+
   fill: transparent;
   stroke: gray;
+  stroke-width: 10px;
+  border: none;
+  stroke-dasharray: 402;
   stroke-width: 3px;
-  // stroke-dasharray: 503;
-  // stroke-dashoffset: 85;
   text-align: center;
+}
+
+.skill__shape {
+  transform: rotate(-90deg);
 }
 
 .skill__title {
@@ -22,4 +18,20 @@
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+}
+
+$i: 0;
+
+@for $i from 0 through 100 {
+  .skill__circle-#{$i} {
+    @if $i <= 50 {
+      stroke-dashoffset: 402 - $i*4;
+    }
+    @else {
+      stroke-dashoffset: 400 - $i*4;
+    }
+
+    stroke: orange;
+    stroke-width: 10px;
+  }
 }
