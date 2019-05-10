@@ -24,8 +24,14 @@ html(lang="en")
         .bottom-section
           section.reviews
             .reviews__title
-              .section-title Что обо мне говорят
-              .reviews__slider-controls
+              h1.section-title.section-title--marginright Что обо мне говорят
+              ul.reviews__slider-controls
+                li.reviews__slider-control
+                  a(href='#').slider-btn
+                    .slider-btn__arrow
+                li.reviews__slider-control
+                  a(href='#').slider-btn.slider-btn--right
+                    .slider-btn__arrow
             ul.reviews__slider
               - for (var i = 0; i < 2; i++)
                 li.reviews__slider-item
@@ -33,7 +39,7 @@ html(lang="en")
                     article.speaker__text 
                       |Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis harum at modi. Atque culpa ratione natus libero corrupti vitae voluptate unde quis ipsam officia reprehenderit iusto repudiandae, aliquid doloribus sint.
                     .speaker__autor
-                      .dev.dev_horizontal
+                      .dev.dev--horizontal
                         .dev__avatar
                         img(src="#" alt="").dev__avatar-pic
                         .dev__description
