@@ -1,10 +1,9 @@
 .target {
   position: relative;
   height: 100vh;
-  background: center top / cover no-repeat url('/src/images/background/gradient_target.png'),
-    bottom left / 35% auto no-repeat url('/src/images/background/hands_target.png'),
-    top right / 97% 94% no-repeat url('/src/images/background/target_bg.png'),
-    #fff;
+  background: bottom left / 35% auto no-repeat url('/src/images/background/hands_target.png'),
+  linear-gradient(to top, rgba(27, 31, 34, 0) 0%, #1b1f22 100%),
+  top right / 100% 94% no-repeat url('/src/images/background/target_bg.png');
 }
 
 .target__container {
@@ -25,7 +24,6 @@
 
 .target__description {
   font-size: 16px;
-  // font-family: "Open Sans - Semibold";
   font-weight: 400;
   opacity: 0.5;
 }
