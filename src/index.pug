@@ -35,17 +35,65 @@ html(lang="en")
             ul.reviews__slider
               - for (var i = 0; i < 2; i++)
                 li.reviews__slider-item
+                  .quote
+                    +icon('quote', 'quote__icon')
                   .speaker
                     article.speaker__text 
                       |Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis harum at modi. Atque culpa ratione natus libero corrupti vitae voluptate unde quis ipsam officia reprehenderit iusto repudiandae, aliquid doloribus sint.
                     .speaker__autor
                       .dev.dev--horizontal
                         .dev__avatar
-                        img(src="#" alt="").dev__avatar-pic
+                          img(src=`src/images/content/Speaker_${i+1}.png`
+                          alt="foto"
+                          ).dev__avatar-pic
                         .dev__description
                           .dev__name Ковальчук Дмитрий
                           .dev__occ Основатель Loftschool              
           section.form
+            h1.section-title Связаться со мной
+            .form-wrapper
+              form.feedback
+                ul.feedback__list
+                  - 
+                    var fields = [
+                      [
+                        {
+                          name: 'user',
+                          head: 'Введите ваше имя',
+                          placeholder: 'Ковальчук Дмитрий',
+                          tag: 'input'
+                        },{
+                          name: 'envelope',
+                          head: 'Введите ваш email',
+                          placeholder: 'loftschool@study.com',
+                          tag: 'input'
+                        }
+                      ],
+                      [
+                        {
+                          name: 'message',
+                          head: 'Сообщение к письму',
+                          placeholder:'Требуется ваша помощь в создании сайта.'+'                                                                           '+'Интересуют сроки и цена вопроса.',
+                          tag: 'textarea'
+                        }
+                      ]
+                    ]
+                  each field in fields
+                    li.feedback__row
+                      - for (var i = 0; i < field.length; i++)
+                        .field
+                          .field__icon(
+                            class=`field__icon--${field[i].tag}`
+                          )
+                            +icon(`${field[i].name}`, 'field__icon-pic')
+                          label(
+                            class=`field__input--${field[i].tag}`
+                            ).field__input
+                            h3.field__input-head #{field[i].head}
+                            #{field[i].tag}(
+                              type="text" 
+                              placeholder=`${field[i].placeholder}`
+                              ).field__input-text
         footer.footer
           .container.footer__container
             .footer__copyright

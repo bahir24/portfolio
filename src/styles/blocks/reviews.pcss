@@ -1,5 +1,5 @@
 .reviews {
-  margin-bottom: 20px;
+  margin-bottom: 200px;
 }
 
 .reviews__title {
@@ -10,7 +10,24 @@
   display: flex;
 }
 
-.class-type {
-  border: none;
-  border-radius: 0;
+.reviews__slider-item {
+  display: flex;
+  width: 29%;
+  margin-right: 74px;
+  justify-content: space-between;
+  &:nth-child(2) {
+    margin-right: 0;
+  }
+}
+
+.quote {
+  width: 17%;
+  // height: 63px;
+
+}
+
+.quote__icon {
+  display: block;
+  fill: #fff;
+  opacity: 0.05;
 }
