@@ -10,16 +10,201 @@ html(lang="en")
   body
     .wrapper
       .maincontent
+        .container.header__container
+          header.header
+            .logo МБ
+            .header__menu
+              nav.nav
+                ul.nav__list
+                  - 
+                    var items= [ 
+                      {
+                          name: 'Главная',
+                          link: 'https://first'
+                      },{
+                          name: 'Обо мне',
+                          link: 'https://second'
+                      },{
+                          name: 'Навыки',
+                          link: 'https://third'
+                      },{
+                          name: 'Работы',
+                          link: 'https://forth'
+                      },{
+                          name: 'Отзывы',
+                          link: 'https://fifth'
+                      },{
+                          name: 'Связаться',
+                          link: 'https://sixth'
+                      } 
+                    ]
+                  each item in items                       
+                    li.nav__item
+                      a(href=`${item.link}`).nav__link #{item.name}
+            .socials
+              ul.socials__list
+                - 
+                  var socials= [ 
+                    {
+                        name: 'vk',
+                        link: 'https://vk'
+                    },{
+                        name: 'insta',
+                        link: 'https://inst'
+                    },{
+                        name: 'github',
+                        link: 'https://github'
+                    }
+                  ]
+                each social in socials
+                  li.socials__item
+                    a(href=`${social.link}`).socials__link 
+                      +icon(`${social.name}`, 'socials__icon')
         .start-section
           section.hero
-            include /sections/parallax
-              .container.hero__container
-                include /sections/header
-                
-                .hero__bottom-buttons
-                  include /sections/scroll-down-btn
-          include /sections/about
-        include /sections/target
+            .parallax
+              .parallax__layer(data-speed="0")
+                img(src="src/images/parallax/sky.png").parallax__pic
+              .parallax__layer(data-speed="0.09")
+                img(src="src/images/parallax/mountain.png").parallax__pic
+              .parallax__layer(data-speed="0")
+                .hero__content
+                  .owner
+                    .owner__desc 
+                      | Личный сайт
+                      br
+                      | веб-разработчика
+                    .owner__name 
+                      | Михаил 
+                      br
+                      | Бахирев
+              .parallax__layer(data-speed="0.6")
+                img(src="src/images/parallax/train.png").parallax__pic
+              .parallax__layer(data-speed="1.2")
+                img(src="src/images/parallax/ground.png").parallax__pic
+              .parallax__layer(data-speed="3.2")
+                img(src="src/images/parallax/gradient_662.png").parallax__pic
+              .parallax__layer(data-speed="3.2")
+                img(src="src/images/parallax/gradient_745.png").parallax__pic
+              .parallax__layer(data-speed="3.2")
+                img(src="src/images/parallax/btwn_sec_bg.png").parallax__pic
+              .container.hero__container                                
+            .hero__bottom-buttons
+              .scroll-down-btn 
+                h4.scroll-down-btn__name Скролл
+                +icon('scroll', 'scroll-down-btn__pic')
+          section.about
+            .container.about__container
+              .about__left
+                .dev
+                  .dev__avatar
+                    img(src="src/images/dev_pic/dev_pic.png" alt="").dev__avatar-pic
+                  .dev__description
+                    table.dev__description-table
+                      - 
+                        var decsription= [
+                          {
+                              tdl: 'Проживаю',
+                              td2: 'Санкт-Петербург'
+                          },{
+                              tdl: 'Возраст',
+                              td2: '30 лет'
+                          },{
+                              tdl: 'Родился',
+                              td2: '24 февраля 1989'
+                          }
+                        ]
+                      each row in decsription
+                          tr.dev__description-row
+                            td.dev__description-cell #{row.tdl}
+                            td.dev__description-cell #{row.td2}
+              .about__right
+                .more
+                  h2.more__hello Рад видеть вас здесь!
+                  h1.more__name Михаил Бахирев
+                  .more__work 
+                    p
+                      | Я разрабатываю сайты и приложения.
+                      br
+                      | Мне нравится использовать современные технологии.
+                      br
+                      | Некоторые из моих работ вы сможете увидеть на этом сайте.
+                  .more__loftschool
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Для его создания использовались самые современные инструменты разработки.
+        section.target
+          .container.target__container
+            .target__title
+              h1.section-title.section-title--small Чем я могу быть полезен вам
+              .target__description
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            ul.dev-skills
+              - 
+                var skills = [
+                  ['frontend', 
+                    [
+                      {
+                      name: 'HTML5',
+                      percent: '0'
+                      },{
+                      name: 'CSS3',
+                      percent: '17'
+                      },{
+                      name: 'Javascript',
+                      percent: '33'
+                      },{
+                      name: 'Jquery и vue.js',
+                      percent: '49'
+                      }
+                    ]
+                  ],
+                  ['workflow', 
+                    [
+                      {  
+                      name: 'GIT',
+                      percent: '65'
+                      },{
+                      name: 'Terminal',
+                      percent: '81'
+                      },{
+                      name: 'Gulp',
+                      percent: '93'
+                      },{
+                      name: 'Webpack',
+                      percent: '100'
+                      }
+                    ]
+                  ]                 
+                ]
+              each item in skills
+                li.dev-skills__item
+                  .skills-kit
+                    h3.skills-kit__title #{item[0]}
+                    ul.skills-kit__list
+                      each skill in item[1]
+                        li.skills-kit__item
+                          .skill                            
+                            svg(
+                              viewbox="-2 -2 140 140"
+                              preserveAspectRatio="none"
+                              width='140px'
+                              height='140px'
+                              ).skill__shape
+                              circle(
+                                r="64"
+                                cx="68"
+                                cy="68"
+                              ).skill__shape-round
+                              circle(
+                                r="64"
+                                cx="68"
+                                cy="68"
+                                class=`skill__circle-${skill.percent}`
+                                stroke="url(#linear-gradient)"
+                                ).skill__shape-round
+                              lineargradient#linear-gradient
+                                stop(offset="0%" stop-color="#ea7400")
+                                stop(offset="100%" stop-color="#f29400")
+                            h4.skill__title #{skill.name}
         section.works
         .bottom-section
           section.reviews
@@ -129,6 +314,3 @@ html(lang="en")
                   article.footer__text
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer__autor Martin Golding
-                  
-
-                  
