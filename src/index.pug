@@ -73,7 +73,7 @@ html(lang="en")
                         {
                           name: 'message',
                           head: 'Сообщение к письму',
-                          placeholder:'Требуется ваша помощь в создании сайта.'+'                                                                           '+'Интересуют сроки и цена вопроса.',
+                          placeholder:'Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса.',
                           tag: 'textarea'
                         }
                       ]
@@ -82,18 +82,18 @@ html(lang="en")
                     li.feedback__row
                       - for (var i = 0; i < field.length; i++)
                         .field
-                          .field__icon(
-                            class=`field__icon--${field[i].tag}`
-                          )
-                            +icon(`${field[i].name}`, 'field__icon-pic')
-                          label(
-                            class=`field__input--${field[i].tag}`
-                            ).field__input
-                            h3.field__input-head #{field[i].head}
-                            #{field[i].tag}(
-                              type="text" 
-                              placeholder=`${field[i].placeholder}`
-                              ).field__input-text
+                          label.field__label
+                            .field__icon(class=`field__icon--${field[i].tag}`)
+                              +icon(`${field[i].name}`, 'field__icon-pic')
+                            .field__input(
+                              class=`field__input--${field[i].tag}`
+                            )
+                              h3.field__input-head #{field[i].head}
+                              #{field[i].tag}(
+                                type="text" 
+                                placeholder=`${field[i].placeholder}`
+                                ).field__input-text
+                button.feedback__button Отправить
         footer.footer
           .container.footer__container
             .footer__copyright
