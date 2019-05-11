@@ -39,7 +39,7 @@ html(lang="en")
                     +icon('quote', 'quote__icon')
                   .speaker
                     article.speaker__text 
-                      |Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis harum at modi. Atque culpa ratione natus libero corrupti vitae voluptate unde quis ipsam officia reprehenderit iusto repudiandae, aliquid doloribus sint.
+                      |Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                     .speaker__autor
                       .dev.dev--horizontal
                         .dev__avatar
@@ -93,25 +93,32 @@ html(lang="en")
                                 type="text" 
                                 placeholder=`${field[i].placeholder}`
                                 ).field__input-text
-                button.feedback__button Отправить
+                button.feedback__button Отправить                
         footer.footer
           .container.footer__container
             .footer__copyright
               .copyright
-                .copyright__year 2019
-                .copyright__name Михаил Бахирев
-                .copyright__description Личный сайт веб-разработчика
+                .copyright__year 
+                  h2.copyright__year-char 2019
+                .copyright__description
+                  h3.copyright__description-name
+                    |Михаил 
+                    br
+                    |Бахирев
+                  h4.copyright__description-info 
+                    |Личный сайт
+                    br
+                    |веб-разработчика
             .footer__data
               .footer-menu
-                nav.nav
-                  ul.nav__list              
+                nav.nav.nav--footer
+                  ul.nav__list             
                     each item in items
                       li.nav__item
                         a(href=`${item.link}`).nav__link #{item.name}
               .footer__data-columns
                 .footer__data-col
-                  article.footer__text
-                    | Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis omnis fuga amet iure illo fugit asperiores itaque dolores autem provident quod nisi, in iste assumenda consequuntur illum eveniet voluptatem aperiam.
+                  article.footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                   .footer__socials.socials.socials--rounded
                     ul.socials__list                      
                       each social in socials
@@ -120,8 +127,7 @@ html(lang="en")
                             +icon(`${social.name}`, 'socials__icon')
                 .footer__data-col
                   article.footer__text
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non doloremque vel ullam nisi! Magni similique omnis rem commodi? Praesentium ratione animi, labore voluptas tempora soluta quisquam nobis architecto sequi in.
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cumque quis harum in neque quod quam cupiditate possimus dolore dolor ab, quaerat quae! Velit quis repellendus assumenda unde tempore animi.
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer__autor Martin Golding
                   
 
