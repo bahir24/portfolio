@@ -16,6 +16,7 @@ module.exports = (env, argv) => {
     use: [
       isProductionBuild ? MiniCssExtractPlugin.loader : "vue-style-loader",
       "css-loader",
+      "postcss-sass-loader",
       "postcss-loader"
     ]
   };

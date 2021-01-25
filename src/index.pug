@@ -10,6 +10,14 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        .container.header__container
+          include ./sections/header.pug
+        .start-section
+          include ./sections/hero.pug
+          include ./sections/about.pug
+        include ./sections/target.pug
+        section.works
+        .bottom-section
+          include /sections/reviews.pug
+          include /sections/form.pug         
+        include ./sections/footer.pug
